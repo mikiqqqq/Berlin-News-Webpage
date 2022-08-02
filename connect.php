@@ -1,11 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$basename = "bz";
-
+$con = mysqli_init();
+mysqli_ssl_set($con,NULL,NULL, "C:\Users\Filip\Desktop\DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+mysqli_real_connect($conn, "berlin-news-server.mysql.database.azure.com", "berlin_news_mng", "Admin-BZ$&3", "berlin-news-database", 3306, MYSQLI_CLIENT_SSL)
+or die('Error connecting to MySQL server.'.mysqli_error());
 // Create connection
-$dbc = mysqli_connect($servername, $username, $password, $basename) or die('Error
-connecting to MySQL server.'.mysqli_error());
-mysqli_set_charset($dbc, "utf8");
+mysqli_set_charset($conn, "utf8");
 ?>
