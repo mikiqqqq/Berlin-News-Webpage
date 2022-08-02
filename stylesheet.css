@@ -1,8 +1,6 @@
 /* Homepage */
 /* Homepage */
 /* Homepage */
-/* Homepage */
-/* Homepage */
 
 body{
   margin: 0 auto;
@@ -19,7 +17,7 @@ body{
 
 #header-main{
   background-color: white;
-  box-shadow: 0 3px 3px 0 #0000003b;
+  box-shadow: 0 1px 15px 0 #0000003b;
 }
 
 .redline{
@@ -96,7 +94,7 @@ img{
   height: 45px;
   text-align: center;
   color: white;
-
+  box-shadow: 0 3px 5px 0 #0000003b;
 }
 
 .sport h2{
@@ -153,6 +151,7 @@ footer{
   width: 100%;
   position: absolute;
   bottom: 0;
+  box-shadow: 0 1px 20px 0 #0000003b;
 }
 
 #footer-text{
@@ -182,11 +181,9 @@ footer{
   height: 135px;
 }
 
-/* Unos */
-/* Unos */
-/* Unos */
-/* Unos */
-/* Unos */
+/* Add Article */
+/* Add Article */
+/* Add Article */
 
 .unos{
   border: 3px solid #DE0D22;
@@ -219,11 +216,9 @@ label{
   display: inline-block;
 }
 
-/* Administracija */
-/* Administracija */
-/* Administracija */
-/* Administracija */
-/* Administracija */
+/* Administration */
+/* Administration */
+/* Administration */
 
 .user{
   width: 20%;
@@ -309,20 +304,31 @@ label{
   background-color: #2f8867;
 }
 
-/* Clanak */
-/* Clanak */
-/* Clanak */
+/* News Article */
+/* News Article */
+/* News Article */
 
-.clanak{
+.news-article{
   top: 20px;
 }
 
 .clanak-article-box{
   padding: 60px 45px 60px 45px;
+  position: relative;
 }
 
 .clanak-title-box{
   padding: 5px 45px 0px 45px;
+}
+
+.news-article h4{
+  margin-top: 15px;
+  color: #DE0D22;
+  font-size: 1.4em;
+}
+
+.news-article h2{
+  font-size: 2.4em;
 }
 
 .article-img{
@@ -335,11 +341,18 @@ label{
   font-size: 15px;
   white-space:pre-wrap;
   word-wrap: break-word;
+  margin-bottom: 55px;
 }
 
-/* Kategorije */
-/* Kategorije */
-/* Kategorije */
+.date{
+  position: absolute;
+  bottom: 30px;
+  right: 45px;
+}
+
+/* Categories */
+/* Categories */
+/* Categories */
 
 .page-kultur{
   background-color: #FF7300;

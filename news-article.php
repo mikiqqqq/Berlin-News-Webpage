@@ -49,7 +49,7 @@
       </nav>
     </header>
 
-    <section class="clanak">
+    <section class="news-article">
       <?php
       include 'connect.php';
       define('UPLPATH', 'images/');
@@ -62,12 +62,14 @@
       $result = mysqli_query($dbc, $query);
       while($row = mysqli_fetch_array($result)) {
         echo '<div class="clanak-title-box">';
+          echo '<h4>' .$row['sazetak']. '</h4>';
           echo '<h2>' .$row['naslov']. '</h2>';
-          echo '</div>';
+        echo '</div>';
           echo '<img class="article-img"
           src="' . UPLPATH . $row['slika'] . '">';
-          echo '<div class="clanak-article-box">';
+        echo '<div class="clanak-article-box">';
           echo '<pre class="article-text">' .$row['tekst']. '</pre>';
+          echo '<p class="date">' .$row['datum']. '</p>';
         echo '</div>';
       }
       ?>

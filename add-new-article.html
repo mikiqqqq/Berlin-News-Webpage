@@ -119,10 +119,10 @@
                 // Provjera naslova
                 var poljeNaslov = document.getElementById("titlee");
                 var naslov = document.getElementById("titlee").value;
-                if (naslov.length < 5 || naslov.length > 30) {
+                if (naslov.length < 5 || naslov.length > 120) {
                     slanje_forme = false;
                     poljeNaslov.style.border = "1px dashed red";
-                    document.getElementById("porukaNaslov").innerHTML = "Title must have between 5 and 30 characters!";
+                    document.getElementById("porukaNaslov").innerHTML = "Title must have between 5 and 120 characters!";
                 }else{
                   poljeNaslov.style.border = "1px solid black";
                   document.getElementById("porukaNaslov").innerHTML = "";

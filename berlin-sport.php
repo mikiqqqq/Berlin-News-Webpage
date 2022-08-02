@@ -54,40 +54,11 @@
     <section class="sport">
       <div class="container">
         <div class="row">
-          <article class="col-lg-4 col-md-12 col-sm-12 col-12">
-            <div>
-              <a class="sport-link" href="news-article.php?id=1">
-                <img src="images/gk.png" alt="Klinsmann Junior"/>
-                <h4>Abschied aus Berlin</h4>
-                <h3>Klinsmann Junior (22) verlasst Hertha - aber wohin geht er?</h3>
-              </a>
-            </div>
-          </article>
-
-          <article class="col-lg-4 col-md-12 col-sm-12 col-12">
-            <div>
-              <a class="sport-link" href="news-article.php?id=1">
-                <img src="images/coach.png" alt="Paderborn Coach"/>
-                <h4>Vorm Saisonfinale</h4>
-                <h3>Paderborn Coach Baumgart verrat Startelf fur Dresden-Spiel</h3>
-              </a>
-            </div>
-          </article>
-
-          <article class="col-lg-4 col-md-12 col-sm-12 col-12">
-            <div>
-              <a class="sport-link" href="news-article.php?id=1">
-                <img src="images/alba.png" alt="Alba-Coach"/>
-                <h4>Vor Playoffs genen Ulm</h4>
-                <h3>Alba-Coach: Deutsche durfen Platz nicht wegen Passes bekommen</h3>
-              </a>
-            </div>
-          </article>
           <?php
           include 'connect.php';
           define('UPLPATH', 'images/');
 
-          $query = "SELECT * FROM vijesti WHERE arhiva=0 AND kategorija='sport' LIMIT 4";
+          $query = "SELECT * FROM vijesti WHERE arhiva=0 AND kategorija='sport'";
           $result = mysqli_query($dbc, $query);
           $i=0;
           while($row = mysqli_fetch_array($result)) {
@@ -95,8 +66,8 @@
               echo '<div>';
                 echo '<a class="sport-link" href="news-article.php?id='.$row['id'].'">';
                   echo '<img src="' . UPLPATH . $row['slika'] . '"/>';
-                  echo "<h4>" .$row['naslov']. '</h4>';
-                  echo '<h3>' .$row['sazetak']. '</h3>';
+                  echo "<h4>" .$row['sazetak']. '</h4>';
+                  echo '<h3>' .$row['naslov']. '</h3>';
                 echo '</a>';
               echo '</div>';
             echo '</article>';
