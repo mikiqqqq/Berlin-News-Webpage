@@ -1,0 +1,394 @@
+/* Homepage */
+/* Homepage */
+/* Homepage */
+/* Homepage */
+/* Homepage */
+
+body{
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page{
+  background-color: #EEEEEE;
+  min-height: 100vh;
+  color: black;
+  position: relative;
+  padding-bottom: 230px;
+}
+
+#header-main{
+  background-color: white;
+  box-shadow: 0 3px 3px 0 #0000003b;
+}
+
+.redline{
+  background-color: #DE0D22;
+  width: 100%;
+  height: 10px;
+}
+
+#title{
+  color: #DE0D22;
+  text-align: center;
+  letter-spacing: -5px;
+  font-family: 'Petit Formal Script';
+  font-weight: bolder;
+  height: 39px;
+}
+
+.link{
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+  border-bottom: 0px;
+  color: black;
+  text-align: center;
+}
+
+.link-box{
+  border: 1px solid #EEEEEE;
+  width: 20%;
+}
+
+div:hover.link-box, div:active.link-box {
+  background-color: #EEEEEE;
+}
+
+a:hover.link, a:active.link{
+  color: #DE0D22;
+}
+
+section{
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 3px 10px 0 #0000003b;
+  margin-top: 20px;
+  background-color: white;
+}
+
+article{
+  padding: 15px;
+  width: 33.3%;
+}
+
+.sport-link{
+  text-decoration: none;
+  color: #DE0D22;
+  z-index: 1;
+}
+
+.kultur-link{
+  text-decoration: none;
+  color: #FF7300;
+  z-index: 1;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sport header{
+  background-color: #DE0D22;
+  height: 45px;
+  text-align: center;
+  color: white;
+
+}
+
+.sport h2{
+  font-family: 'Anek Malayalam', sans-serif;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.sport h3{
+  font-size: 21px;
+  padding: 0px 10px;
+  margin-top: -10px;
+  color: black;
+}
+
+.sport h4{
+  margin: 10px 0 12px 0;
+  color: #DE0D22;
+  font-size: 17px;
+  padding: 0px 10px;
+}
+
+.kultur-und-show header{
+  background-color: #FF7300;
+  height: 45px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 3px 5px 0 #0000003b;
+}
+
+.kultur-und-show h2{
+  font-family: 'Anek Malayalam', sans-serif;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.kultur-und-show h3{
+  font-size: 21px;
+  padding: 0px 10px;
+  margin-top: -10px;
+  color: black;
+}
+
+.kultur-und-show h4{
+  margin: 10px 0 12px 0;
+  color: #FF7300;
+  font-size: 17px;
+  padding: 0px 10px;
+}
+
+footer{
+  background-color: #606060;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+#footer-text{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: 60%;
+  background-color: white;
+  height: 200px;
+  text-align: center;
+}
+
+#footer-text p{
+  margin-top: 26px;
+  font-size: 12px;
+}
+
+#opaque-footer-box{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #606060;
+  opacity: 93%;
+  width: 61%;
+  height: 135px;
+}
+
+/* Unos */
+/* Unos */
+/* Unos */
+/* Unos */
+/* Unos */
+
+.unos{
+  border: 3px solid #DE0D22;
+  min-width: 450px;
+}
+
+.unos-box{
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  min-height: 100px;
+}
+
+textarea{
+  width: 100%;
+}
+
+.unos-title{
+  width: 100%;
+}
+
+label{
+  margin-top: 10px;
+}
+
+.submit-item{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+/* Administracija */
+/* Administracija */
+/* Administracija */
+/* Administracija */
+/* Administracija */
+
+.user{
+  width: 20%;
+  min-width: 250px;
+  height: 125px;
+  margin: 0 auto;
+  margin-top: 25px;
+  background-color: white;
+  box-shadow: 0 3px 10px 0 #0000003b;
+}
+
+.username-p{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.username{
+  color: #DE0D22;
+}
+
+#user-form{
+  margin: 0 auto;
+  width: 80px;
+}
+
+#no-perm{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.red-h2{
+  position: relative;
+  top: 10px;
+  text-align: center;
+  font-size: 50px;
+  color: #DE0D22;
+  font-family: 'Verdana';
+}
+
+.small-photo{
+  margin: 5px 0 3px 0;
+  border: 2px solid #DE0D22;
+}
+
+.red-button{
+  background-color: #DE0D22;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+}
+
+.green-button{
+  background-color: #3aaa80;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+}
+
+.neutral-button{
+  background-color: gray;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+}
+
+.red-button:hover{
+  background-color: #be0e1f;
+}
+
+.neutral-button:hover{
+  background-color: #6a6a6a;
+}
+
+.green-button:hover{
+  background-color: #2f8867;
+}
+
+/* Clanak */
+/* Clanak */
+/* Clanak */
+
+.clanak{
+  top: 20px;
+}
+
+.clanak-article-box{
+  padding: 60px 45px 60px 45px;
+}
+
+.clanak-title-box{
+  padding: 5px 45px 0px 45px;
+}
+
+.article-img{
+  position: relative;
+  top: 20px;
+}
+
+.article-text{
+  font-family: Verdana;
+  font-size: 15px;
+  white-space:pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Kategorije */
+/* Kategorije */
+/* Kategorije */
+
+.page-kultur{
+  background-color: #FF7300;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 230px;
+  background: radial-gradient(circle, rgba(255,115,0,1) 38%, rgba(189,85,0,1) 100%);
+}
+
+.page-sport{
+  background-color: #DE0D22;
+  background: radial-gradient(circle, rgba(222,13,34,1) 38%, rgba(135,7,20,1) 100%);
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 230px;
+}
+
+.category-h2{
+  position: relative;
+  top: 15px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+.errorMessage{
+  color: red;
+}
+
+.bojaPoruke{
+  color: red;
+}
+
+.login-msg{
+  text-align: center;
+  color: green;
+}
+
+.level-msg{
+  text-align: center;
+  color: red;
+}
+
+.reg{
+  margin-top: 30px;
+  text-align: center;
+  color: green;
+}
+
+.reg-msg{
+  text-align: center;
+}
