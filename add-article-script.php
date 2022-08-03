@@ -22,10 +22,15 @@ if(isset($_POST['submit'])){
   $target_dir = 'images/'.$image;
   move_uploaded_file($_FILES["photo"]["tmp_name"], $target_dir);
 
+  echo 'ayo2';
+
   $img = imagecreatefromstring(file_get_contents($target_dir));
   imagepalettetotruecolor($img);
   imagealphablending($img, true);
   imagesavealpha($img, true);
+
+  echo 'ayo3 spec';
+
   $image = $img_name.'.webp';
   $original_img = 'images/'.$image;
   $resized_img =  'images/mini_'.$image;
