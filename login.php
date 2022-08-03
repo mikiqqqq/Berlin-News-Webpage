@@ -19,7 +19,6 @@ if(isset($_SESSION['$username'])){
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Petit+Formal+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Log in</title>
 </head>
@@ -48,7 +47,7 @@ if(isset($_SESSION['$username'])){
               <a class="link" href="login.php">ADMINISTRATION</a>
             </div>
 
-            <div class="col-lg-2 col-md-6 col-sm-12 col-12 link-box">
+            <div class="col-lg-2 col-md-12 col-sm-12 col-12 link-box">
               <a class="link" href="add-new-article.html">ADD ARTICLE</a>
             </div>
           </div>
@@ -147,8 +146,10 @@ if(isset($_SESSION['$username'])){
               $admin = true;
             }
 
+            echo ''.$username. ' ' .$level.'--------------------------------';
             $_SESSION['$username'] = $username;
             $_SESSION['$level'] = $level;
+            echo ''.$_SESSION['$level']. ' ' .$_SESSION['$username']. '--------------------------------';
           }else{
             $login = false;
           }

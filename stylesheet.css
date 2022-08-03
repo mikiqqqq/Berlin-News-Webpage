@@ -33,6 +33,7 @@ body{
   font-family: 'Petit Formal Script';
   font-weight: bolder;
   height: 39px;
+  font-size: 2.5em;
 }
 
 .link{
@@ -63,6 +64,7 @@ section{
   box-shadow: 0 3px 10px 0 #0000003b;
   margin-top: 20px;
   background-color: white;
+  min-width: 350px;
 }
 
 article{
@@ -98,8 +100,9 @@ img{
 }
 
 .sport h2{
-  font-family: 'Anek Malayalam', sans-serif;
-  font-weight: bold;
+  font-family: 'Arial';
+  font-weight: 600;
+  font-size: 2em;
   margin-top: 4px;
 }
 
@@ -126,8 +129,9 @@ img{
 }
 
 .kultur-und-show h2{
-  font-family: 'Anek Malayalam', sans-serif;
-  font-weight: bold;
+  font-family: 'Arial';
+  font-weight: 600;
+  font-size: 2em;
   margin-top: 4px;
 }
 
@@ -348,6 +352,7 @@ label{
   position: absolute;
   bottom: 30px;
   right: 45px;
+  font-weight: bold;
 }
 
 /* Categories */

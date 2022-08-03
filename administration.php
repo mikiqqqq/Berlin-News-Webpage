@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,7 +16,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <title>Administration</title>
   </head>
   <body>
@@ -41,7 +43,7 @@
                 <a class="link" href="administration.php">ADMINISTRATION</a>
               </div>
 
-              <div class="col-lg-2 col-md-6 col-sm-12 col-12 link-box">
+              <div class="col-lg-2 col-md-12 col-sm-12 col-12 link-box">
                 <a class="link" href="add-new-article.html">ADD ARTICLE</a>
               </div>
             </div>
@@ -52,8 +54,6 @@
       <h2 class="red-h2">ADMINISTRATION</h2>
 
       <?php
-      session_start();
-
       include 'connect.php';
       define('UPLPATH', 'images/');
 
@@ -112,7 +112,7 @@
                     <img class="small-photo" src="' . UPLPATH .
                     $row['slika'] . '" width=100px>
                     <label for="pphoto">Photo:</label>
-                      <input type="file" class="input-text" id="photo"
+                      <input type="file" accept="image/*" class="input-text" id="photo"
                       value="'.$row['slika'].'" name="photo"/><br>
                   </div>
 

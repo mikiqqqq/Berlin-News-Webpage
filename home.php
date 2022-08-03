@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Petit+Formal+Script&display=swap" rel="stylesheet">
   <title>Berlin News</title>
 </head>
 <body>
@@ -41,7 +40,7 @@
               <a class="link" href="login.php">ADMINISTRATION</a>
             </div>
 
-            <div class="col-lg-2 col-md-6 col-sm-12 col-12 link-box">
+            <div class="col-lg-2 col-md-12 col-sm-12 col-12 link-box">
               <a class="link" href="add-new-article.html">ADD ARTICLE</a>
             </div>
           </div>
@@ -67,7 +66,7 @@
             echo '<article class="col-lg-4 col-md-12 col-sm-12 col-12">';
               echo '<div>';
                 echo '<a class="sport-link" href="news-article.php?id='.$row['id'].'">';
-                  echo '<img src="' . UPLPATH . $row['slika'] . '"/>';
+                  echo '<img class="resize" src="' . UPLPATH . $row['slika'] . '"/>';
                   echo '<h4>' .$row['sazetak']. '</h4>';
                   echo '<h3>' .$row['naslov']. '</h3>';
                 echo '</a>';

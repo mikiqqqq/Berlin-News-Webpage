@@ -15,9 +15,6 @@ if(isset($_POST['submit'])){
     $archive=0;
   }
 
-  $target_dir = 'images/'.$image;
-  move_uploaded_file($_FILES["photo"]["tmp_name"], $target_dir);
-
   $sql = "INSERT INTO vijesti (datum, naslov, sazetak, tekst, slika, kategorija, arhiva) values (?, ?, ?, ?, ?, ?, ?)";
 
   $stmt = mysqli_stmt_init($dbc);
