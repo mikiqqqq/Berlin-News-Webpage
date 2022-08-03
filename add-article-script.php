@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_STRICT | E_ALL);
 include "connect.php";
 
 if(isset($_POST['submit'])){
@@ -16,36 +15,20 @@ if(isset($_POST['submit'])){
     $archive=0;
   }
 
-  echo 'ayo1';
-
   $img_name = substr($image, 0, strrpos($image, "."));
 
   $target_dir = 'images/'.$image;
   move_uploaded_file($_FILES["photo"]["tmp_name"], $target_dir);
 
-  echo 'ayo2';
-
   $img = imagecreatefromstring(file_get_contents($target_dir));
   imagepalettetotruecolor($img);
   imagealphablending($img, true);
   imagesavealpha($img, true);
-
-  echo 'ayo3 spec';
-
   $image = $img_name.'.webp';
-    echo 'ayo4 spec';
   $original_img = 'images/'.$image;
-    echo 'ayo5 spec';
   $resized_img =  'images/mini_'.$image;
-    echo 'ayo6 spec';
-    echo ''.$img.'';
-    echo ''.$original_img.'';
-    echo ''.imagewebp($img, $original_img, 100).'';
   imagewebp($img, $original_img, 100);
-    echo 'ayo7 spec';
   imagedestroy($img);
-
-  echo 'ayo2';
 
   $maxDim = 430;
   $file_name = $original_img;
@@ -69,8 +52,6 @@ if(isset($_POST['submit'])){
 
   unlink($target_dir);
 
-  echo 'ayo3';
-
   $sql = "INSERT INTO vijesti (datum, naslov, sazetak, tekst, slika, kategorija, arhiva) values (?, ?, ?, ?, ?, ?, ?)";
 
   $stmt = mysqli_stmt_init($dbc);
@@ -79,8 +60,6 @@ if(isset($_POST['submit'])){
     mysqli_stmt_bind_param($stmt,'ssssssi', $date, $title, $about, $content, $image, $category, $archive);
     mysqli_stmt_execute($stmt);
   }
-
-  echo 'ayo4';
 
   $query = "SELECT * FROM vijesti WHERE naslov='$title' ";
   $result = mysqli_query($dbc, $query);
