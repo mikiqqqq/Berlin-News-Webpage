@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'berlin-news'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_94BC187423014705859AB078B86F0D72 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0AF210F36EA141A985F2CDED08E83B41 }}
           package: .
