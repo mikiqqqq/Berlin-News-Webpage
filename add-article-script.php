@@ -15,6 +15,8 @@ if(isset($_POST['submit'])){
     $archive=0;
   }
 
+  echo 'ayo1';
+
   $img_name = substr($image, 0, strrpos($image, "."));
 
   $target_dir = 'images/'.$image;
@@ -30,6 +32,7 @@ if(isset($_POST['submit'])){
   imagewebp($img, $original_img, 100);
   imagedestroy( $img );
 
+  echo 'ayo2';
 
   $maxDim = 430;
   $file_name = $original_img;
@@ -53,6 +56,8 @@ if(isset($_POST['submit'])){
 
   unlink($target_dir);
 
+  echo 'ayo3';
+
   $sql = "INSERT INTO vijesti (datum, naslov, sazetak, tekst, slika, kategorija, arhiva) values (?, ?, ?, ?, ?, ?, ?)";
 
   $stmt = mysqli_stmt_init($dbc);
@@ -61,6 +66,8 @@ if(isset($_POST['submit'])){
     mysqli_stmt_bind_param($stmt,'ssssssi', $date, $title, $about, $content, $image, $category, $archive);
     mysqli_stmt_execute($stmt);
   }
+
+  echo 'ayo4';
 
   $query = "SELECT * FROM vijesti WHERE naslov='$title' ";
   $result = mysqli_query($dbc, $query);
