@@ -32,10 +32,14 @@ if(isset($_POST['submit'])){
   echo 'ayo3 spec';
 
   $image = $img_name.'.webp';
+    echo 'ayo4 spec';
   $original_img = 'images/'.$image;
+    echo 'ayo5 spec';
   $resized_img =  'images/mini_'.$image;
+    echo 'ayo6 spec';
   imagewebp($img, $original_img, 100);
-  imagedestroy( $img );
+    echo 'ayo7 spec';
+  imagedestroy($img);
 
   echo 'ayo2';
 
