@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_STRICT | E_ALL);
 include "connect.php";
 
 if(isset($_POST['submit'])){
@@ -37,9 +38,9 @@ if(isset($_POST['submit'])){
     echo 'ayo5 spec';
   $resized_img =  'images/mini_'.$image;
     echo 'ayo6 spec';
-    echo $img;
-    echo $original_img;
-    echo imagewebp($img, $original_img, 100);
+    echo ''.$img.'';
+    echo ''.$original_img.'';
+    echo ''.imagewebp($img, $original_img, 100).'';
   imagewebp($img, $original_img, 100);
     echo 'ayo7 spec';
   imagedestroy($img);

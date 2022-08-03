@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_STRICT | E_ALL);
 ?>
 <!DOCTYPE html>
 <html>
