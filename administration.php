@@ -10,7 +10,7 @@ session_start();
     <meta name="author" content="Filip Miloš">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" media="screen" href="stylesheet.css">
+    <link rel="stylesheet" media="screen" href="css/stylesheet.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
     rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +25,8 @@ session_start();
         </div>
         <h1 id="title">B&middot;Z</h1>
         <nav>
-          <div class="container-fluid">
-            <div class="row">
+          <div class="container-fluid gx-0">
+            <div class="row gx-0">
               <div class="col-lg-2 col-md-6 col-sm-12 col-12 link-box">
                 <a class="link" href="home.php">HOME</a>
               </div>
@@ -55,7 +55,7 @@ session_start();
 
       <?php
       include 'connect.php';
-      define('UPLPATH', 'images/');
+      define('UPLPATH', 'images/mini_');
 
       if(isset($_SESSION['$username'])){
 
@@ -83,9 +83,9 @@ session_start();
         $query = "SELECT * FROM vijesti";
         $result = mysqli_query($dbc, $query);
         while($row = mysqli_fetch_array($result)) {
-          echo '<section class="unos" id="error-check'.$row['id'].'">';
+          echo '<section class="unos" id="article-id='.$row['id'].'">';
           echo '<div class="unos-box">';
-          echo '<form enctype="multipart/form-data" action="#error-check'.$row['id'].'" method="POST">
+          echo '<form enctype="multipart/form-data" action="#article-id='.$row['id'].'" method="POST">
                   <div class="form-item">
                     <label for="title">Title:</label>
                     <div class="form-field">
@@ -127,7 +127,7 @@ session_start();
                         <option value="culture"';
                         if('culture' == $row['kategorija'])
                         { echo " selected"; }
-                        echo'>Kultura</option>
+                        echo'>Culture</option>
                       </select>
                   </div>
 
@@ -165,7 +165,7 @@ session_start();
         }
 
         if(isset($_POST['update'])){
-          $picture = $_FILES['photo']['name'];
+          $image = $_FILES['photo']['name'];
           $title=$_POST['title'];
           $about=$_POST['about'];
           $content=$_POST['content'];
@@ -178,15 +178,49 @@ session_start();
 
           $id=$_POST['id'];
 
-          if($picture == ''){
+          if($image == ''){
             $query = "UPDATE vijesti SET naslov='$title', sazetak='$about',
             tekst='$content', kategorija='$category', arhiva='$archive' WHERE id=$id ";
           }else{
-            $target_dir = 'images/'.$picture;
+            $img_name = substr($image, 0, strrpos($image, "."));
+
+            $target_dir = 'images/'.$image;
             move_uploaded_file($_FILES["photo"]["tmp_name"], $target_dir);
 
+            $img = imagecreatefromstring(file_get_contents($target_dir));
+            imagepalettetotruecolor($img);
+            imagealphablending($img, true);
+            imagesavealpha($img, true);
+            $image = $img_name.'.webp';
+            $original_img = 'images/'.$image;
+            $resized_img =  'images/mini_'.$image;
+            imagewebp($img, $original_img, 100);
+            imagedestroy( $img );
+
+            $maxDim = 430;
+            $file_name = $original_img;
+            list($width, $height, $type, $attr) = getimagesize( $file_name );
+                $target_filename = $original_img;
+                $ratio = $width/$height;
+                if( $ratio > 1) {
+                    $new_width = $maxDim;
+                    $new_height = $maxDim/$ratio;
+                } else {
+                    $new_width = $maxDim*$ratio;
+                    $new_height = $maxDim;
+                }
+                $src = imagecreatefromstring( file_get_contents( $file_name ) );
+                $dst = imagecreatetruecolor( $new_width, $new_height );
+                imagecopyresampled( $dst, $src, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+                imagewebp( $src, $original_img, 90);
+                imagedestroy( $src );
+                imagewebp( $dst, $resized_img, 90);
+                imagedestroy( $dst );
+
+            unlink($target_dir);
+
             $query = "UPDATE vijesti SET naslov='$title', sazetak='$about', tekst='$content',
-            slika='$picture', kategorija='$category', arhiva='$archive' WHERE id=$id ";
+            slika='$image', kategorija='$category', arhiva='$archive' WHERE id=$id ";
           }
 
           $result = mysqli_query($dbc, $query);

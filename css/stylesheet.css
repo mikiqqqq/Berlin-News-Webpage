@@ -40,7 +40,6 @@ body{
   text-decoration: none;
   display: block;
   padding: 5px;
-  border-bottom: 0px;
   color: black;
   text-align: center;
 }
@@ -48,9 +47,11 @@ body{
 .link-box{
   border: 1px solid #EEEEEE;
   width: 20%;
+  border-bottom: 0px;
 }
 
 div:hover.link-box, div:active.link-box {
+  transition: 0.5s;
   background-color: #EEEEEE;
 }
 
@@ -191,7 +192,7 @@ footer{
 
 .unos{
   border: 3px solid #DE0D22;
-  min-width: 450px;
+  min-width: 350px;
 }
 
 .unos-box{
@@ -259,7 +260,7 @@ label{
   position: relative;
   top: 10px;
   text-align: center;
-  font-size: 50px;
+  font-size: 45px;
   color: #DE0D22;
   font-family: 'Verdana';
 }
@@ -409,4 +410,18 @@ label{
 
 .reg-msg{
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .unos-box{
+    width: 90%;
+  }
+
+  .news-article{
+    width: 90%;
+  }
+
+  .news-article h2{
+    font-size: 1.6em;
+  }
 }

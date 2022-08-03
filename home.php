@@ -7,7 +7,7 @@
   <meta name="author" content="Filip Miloš">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" media="screen" href="stylesheet.css">
+  <link rel="stylesheet" media="screen" href="css/stylesheet.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
   rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,13 +57,13 @@
 
           <?php
           include 'connect.php';
-          define('UPLPATH', 'images/');
+          define('UPLPATH', 'images/mini_');
 
           $query = "SELECT * FROM vijesti WHERE arhiva=0 AND kategorija='sport' LIMIT 6";
           $result = mysqli_query($dbc, $query);
           $i=0;
           while($row = mysqli_fetch_array($result)) {
-            echo '<article class="col-lg-4 col-md-12 col-sm-12 col-12">';
+            echo '<article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">';
               echo '<div>';
                 echo '<a class="sport-link" href="news-article.php?id='.$row['id'].'">';
                   echo '<img class="resize" src="' . UPLPATH . $row['slika'] . '"/>';
@@ -90,7 +90,7 @@
           $result = mysqli_query($dbc, $query);
           $i=0;
           while($row = mysqli_fetch_array($result)) {
-            echo '<article class="col-lg-4 col-md-12 col-sm-12 col-12">';
+            echo '<article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">';
               echo '<div>';
                 echo '<a class="kultur-link" href="news-article.php?id='.$row['id'].'">';
                   echo '<img src="' . UPLPATH . $row['slika'] . '"/>';
