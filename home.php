@@ -56,6 +56,8 @@
           </header>
 
           <?php
+          phpinfo();
+
           include 'connect.php';
           define('UPLPATH', 'images/mini_');
 
