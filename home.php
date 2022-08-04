@@ -66,7 +66,8 @@
             echo '<article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">';
               echo '<div>';
                 echo '<a class="sport-link" href="news-article.php?id='.$row['id'].'">';
-                  echo '<img class="resize" src="' . UPLPATH . $row['slika'] . '"/>';
+                  echo '<img src="'. UPLPATH . $row['slika'] . '"
+                        alt="'. $row['slika'] .'"/>';
                   echo '<h4>' .$row['sazetak']. '</h4>';
                   echo '<h3>' .$row['naslov']. '</h3>';
                 echo '</a>';
