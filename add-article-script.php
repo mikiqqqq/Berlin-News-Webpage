@@ -25,10 +25,10 @@ if(isset($_POST['submit'])){
   imagepalettetotruecolor($img);
   imagealphablending($img, true);
   imagesavealpha($img, true);
-  $image = $img_name.'.webp';
+  $image = $img_name.'.jpeg';
   $original_img = 'images/'.$image;
   $resized_img =  'images/mini_'.$image;
-  imagewebp($img, $original_img, 100);
+  imagejpeg($img, $original_img, 100);
   imagedestroy($img);
 
   $maxDim = 430;
@@ -43,13 +43,13 @@ if(isset($_POST['submit'])){
           $new_width = $maxDim*$ratio;
           $new_height = $maxDim;
       }
-      $src = imagecreatefromstring( file_get_contents( $file_name ) );
-      $dst = imagecreatetruecolor( $new_width, $new_height );
-      imagecopyresampled( $dst, $src, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
-      imagewebp( $src, $original_img, 90);
-      imagedestroy( $src );
-      imagewebp( $dst, $resized_img, 90);
-      imagedestroy( $dst );
+      $src = imagecreatefromstring(file_get_contents($file_name));
+      $dst = imagecreatetruecolor($new_width, $new_height);
+      imagecopyresampled($dst, $src, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+      imagejpeg($src, $original_img, 90);
+      imagedestroy($src);
+      imagejpeg($dst, $resized_img, 90);
+      imagedestroy($dst);
 
   unlink($target_dir);
 
